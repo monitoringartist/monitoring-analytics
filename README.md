@@ -15,7 +15,7 @@ Limited public demo instance: https://monitoringartist.shinyapps.io/monitoring-a
 - **[Zabbix extension - all templates](https://hub.docker.com/r/monitoringartist/zabbix-ext-all-templates/)** - storage image for Zabbix XXL with 200+ [community templates](https://github.com/monitoringartist/zabbix-community-repos)
 - **[Kubernetized Zabbix](https://github.com/monitoringartist/kubernetes-zabbix)** - containerized Zabbix cluster based on Kubernetes
 - **[Grafana XXL](https://hub.docker.com/r/monitoringartist/grafana-xxl/)** - dockerized Grafana with all community plugins
-- **[Monitoring Analytics](https://hub.docker.com/r/monitoringartist/monitoring-analytics/)** - dockerized analytics tool from data scientists
+- **[Monitoring Analytics](https://hub.docker.com/r/monitoringartist/monitoring-analytics/)** - dockerized monitoring analytic tool from data scientists
 - **[Docker killer](https://hub.docker.com/r/monitoringartist/docker-killer/)** - Docker image for Docker stress and Docker orchestration testing
 
 Please donate to author, so he can continue to publish other awesome projects
@@ -33,6 +33,17 @@ docker run \
   -p 3838:3838 \
   monitoringartist/monitoring-analytics:latest
 ```
+
+Support
+=======
+
+Deep monitoring knowledge and science skills are required, so only commercial support is available.
+
+Recommended related articles
+============================
+
+- [Dynatrace blog about percentiles](http://apmblog.dynatrace.com/2012/11/14/why-averages-suck-and-percentiles-are-great/)
+- [Zabbix white paper about prediction](http://zabbix.org/mw/images/1/18/Prediction_docs.pdf)
 
 Author
 ======

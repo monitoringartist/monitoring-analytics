@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y -t unstable \
     gdebi -n ss-latest.deb && \
     rm -f version.txt ss-latest.deb
 RUN \
-    R -e "install.packages(c('shiny'), repos='https://cran.rstudio.com/')" && \
-    R -e "install.packages('RZabbix', 'ggplot2')" && \
+    R -e "install.packages(c('shiny', 'ggplot2'), repos='https://cran.rstudio.com/')" && \
+    R -e "install.packages('RZabbix')" && \
     rm -rf /usr/local/lib/R/site-library/shiny/examples/* && \
     apt-get clean
     

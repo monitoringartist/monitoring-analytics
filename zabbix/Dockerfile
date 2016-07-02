@@ -2,7 +2,7 @@ FROM r-base:latest
 
 MAINTAINER Jan Garaj "info@monitoringartist.com"
 
-ENV SHINY_LOG_LEVEL=TRACE
+ENV SHINY_LOG_LEVEL=WARN
 
 RUN apt-get update && apt-get install -y -t unstable \
     sudo \
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y -t unstable \
     rm -f version.txt ss-latest.deb
 RUN \
     R -e "install.packages(c('shiny'), repos='https://cran.rstudio.com/')" && \
-    R -e "install.packages('RZabbix')" && \
+    R -e "install.packages('RZabbix', 'ggplot2')" && \
     rm -rf /usr/local/lib/R/site-library/shiny/examples/* && \
     apt-get clean
     

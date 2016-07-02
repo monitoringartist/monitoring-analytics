@@ -32,7 +32,7 @@ ui <- shinyUI(
             "limit",
             "Last values limit",
             min = 10,
-            max = 100,
+            max = 10000,
             value = 10,
             step = 10
           )

@@ -10,7 +10,7 @@ ui <- shinyUI(
     windowTitle = "Monitoring analytics (beta) - www.monitoringartist.com",
     title = div(
       style = "display:inline-block;",
-      img(src = "https://monitoringartist.github.io/zabbix-searcher/assets/Monitoring-Artist-logo.png"),
+      img(src = "Monitoring-Artist-logo.png"),
       "Monitoring analytics (beta)"
     ),
     tabPanel(
@@ -32,7 +32,7 @@ ui <- shinyUI(
             "limit",
             "Last values limit",
             min = 10,
-            max = 100000,
+            max = 100,
             value = 10,
             step = 10
           )
@@ -217,7 +217,8 @@ ui <- shinyUI(
                  h3("Monitoring will be rocket science!"),
                  p(
                    "Yes, monitoring is not rocket science usually. However your monitoring system keeps a lot of time series data. You can you use science / math / statistics and turn your data into knowledge, which can be used to improve your monitoring systems.
-                   Don't estimate any static thresholds for your metrics. Set them based on your real values. If you don't know, what normal value, then try to detect anomalies in your series. Only your data science is your limitation."
+                   Don't estimate any static thresholds for your metrics. Set them based on your real values. If you don't know, what is normal value, then try to detect anomalies in your series. Remember, your only limitation is your data science imagination: 
+                   histograms, linear/polynomial/...  trends, prediction, anomaly detection, correlation, 3d visualization, heat map, ..."
                  ),
                  p("Recommended related articles:"),
                  tags$a(
@@ -256,7 +257,7 @@ ui <- shinyUI(
       div(style = "display:inline-block;", span("© 2016 Monitoring Artist")),
       div(
         style = "display:inline-block;",
-        img(src = 'https://monitoringartist.github.io/zabbix-searcher/assets/favicon.png', title =
+        img(src = 'favicon.png', title =
               'DevOps / Docker / Kubernetes / AWS ECS / Google GCP / Zabbix / Zenoss / Terraform / Monitoring')
       ),
       div(
@@ -269,7 +270,7 @@ ui <- shinyUI(
         )
       ),
       includeHTML("google-analytics.js"),
-      tags$head(tags$link(rel="shortcut icon", href="https://monitoringartist.github.io/zabbix-searcher/assets/favicon.png"))
+      tags$head(tags$link(rel="shortcut icon", href="favicon.png"))
     ))
   )
 )
@@ -507,18 +508,31 @@ server <- shinyServer(function(input, output, session) {
     }
     # if (input$logarithmic) {
     #   # p <- p + stat_smooth(method = 'nls', formula = y ~ a * log(x) +b, aes(x = clock, y = value, colour = 'Logarithmic trend'), se = FALSE)
+    #   # p <-
+    #   #   p + geom_line(
+    #   #     stat = "smooth",
+    #   #     method = 'nls',
+    #   #     formula = y ~ a * log(x) + b,
+    #   #     aes(
+    #   #       x = clock,
+    #   #       y = value,
+    #   #       colour = 'Logarithmic trend'
+    #   #     ),
+    #   #     se = FALSE,
+    #   #     method.args = list(start = c(a = 1, b = 1)),
+    #   #     linetype = "dashed"
+    #   #   )
     #   p <-
     #     p + geom_line(
     #       stat = "smooth",
-    #       method = 'nls',
-    #       formula = y ~ a * log(x) + b,
+    #       method = 'lm',
+    #       formula = y ~ log(x),
     #       aes(
     #         x = clock,
     #         y = value,
     #         colour = 'Logarithmic trend'
     #       ),
     #       se = FALSE,
-    #       method.args = list(start = c(a = 1, b = 1)),
     #       linetype = "dashed"
     #     )
     # }

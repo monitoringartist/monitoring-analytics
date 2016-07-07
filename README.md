@@ -3,7 +3,11 @@ Monitoring Analytics
 
 Limited public demo instance: https://monitoringartist.shinyapps.io/monitoring-analytics/
 
- If you like or use this project, please provide feedback to author - Star it ★.
+If you like or use this project, please provide feedback to author - Star it ★.
+
+Yes, monitoring is not a rocket science usually. However your monitoring system keeps a lot of time series data. You can you use science / math / statistics and turn your data into knowledge, which can be used to improve your monitoring systems and settings.
+Don't estimate any static thresholds for your metrics. Set them based on your real values. If you don't know, what is normal value, then try to detect anomalies in your series. Remember, your only limitation is your data science imagination:
+histograms, linear/polynomial/...  trends, prediction, anomaly detection, correlation, 3d visualization, heat map, ...
  
 ![Monitoring Analytics](https://raw.githubusercontent.com/monitoringartist/monitoring-analytics/master/doc/monitoring-analytics.gif) 
 
